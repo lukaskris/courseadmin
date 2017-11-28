@@ -21,8 +21,9 @@ Route::get('/home/{id}', 'HomeController@show');
 Route::get('/category','CategoryController@index');
 Route::get('/category/add','CategoryController@add');
 Route::get('/category/{id}','CategoryController@edit');
+Route::put('/category/{id}','CategoryController@update');
 Route::get('/category/delete/{id}','CategoryController@delete');
-Route::get('/category/search/{name}','CategoryController@search');
+
 
 // Lesson
 Route::get('/lesson','LessonController@index');

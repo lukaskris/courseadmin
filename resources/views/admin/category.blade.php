@@ -24,20 +24,22 @@
                   <th>Action</th>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Android</td>
-                    <td>
-                      <a href="/category/manage/1" class="dropdown-toggle" data-toggle="dropdown">
-                          <i class="fa fa-edit"></i>
-                          <p class="hidden-lg hidden-md">Dashboard</p>
-                      </a>
-                      <a href="/category/delete/1" class="dropdown-toggle" data-toggle="dropdown">
-                          <i class="fa fa-remove"></i>
-                          <p class="hidden-lg hidden-md">Delete</p>
-                      </a>
-                    </td>
-                  </tr>
+                  @foreach($data as $category)
+                    <tr>
+                      <td>{{$category->id}}</td>
+                      <td>{{$category->name}}</td>
+                      <td>
+                        <a href="/category/{{$category->id}}">
+                            <i class="fa fa-edit"></i>
+                            <p class="hidden-lg hidden-md">Edit</p>
+                        </a>
+                        <a href="/category/delete/{{$category->id}}">
+                            <i class="fa fa-remove"></i>
+                            <p class="hidden-lg hidden-md">Delete</p>
+                        </a>
+                      </td>
+                    </tr>
+                  @endforeach
                 </tbody>
               </table>
             </div>
