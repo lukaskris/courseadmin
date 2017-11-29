@@ -20,9 +20,10 @@ Route::get('/home/{id}', 'HomeController@show');
 // Category
 Route::get('/category','CategoryController@index');
 Route::get('/category/add','CategoryController@add');
+Route::post('/category','CategoryController@store');
 Route::get('/category/{id}','CategoryController@edit');
 Route::put('/category/{id}','CategoryController@update');
-Route::get('/category/delete/{id}','CategoryController@delete');
+Route::delete('/category/{id}','CategoryController@delete');
 
 
 // Lesson

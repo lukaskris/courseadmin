@@ -136,14 +136,7 @@
 
   <script type="text/javascript">
       $(document).ready(function(){
-
-          // $.notify({
-          //     icon: 'pe-7s-gift',
-          //     message: "Welcome Administrator."
-          //   },{
-          //       type: 'info',
-          //       timer: 400
-          //   });
+            @yield('notification')
             $('#table').DataTable( {
                 "pagingType": "simple"
             } );

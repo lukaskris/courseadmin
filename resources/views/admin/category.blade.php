@@ -2,6 +2,8 @@
 
 @section('title','Category')
 @section('content')
+
+<!-- {!! $notif !!} -->
 <div class="row">
     <div class="col-md-12">
       <div class="card">
@@ -33,10 +35,13 @@
                             <i class="fa fa-edit"></i>
                             <p class="hidden-lg hidden-md">Edit</p>
                         </a>
-                        <a href="/category/delete/{{$category->id}}">
-                            <i class="fa fa-remove"></i>
-                            <p class="hidden-lg hidden-md">Delete</p>
-                        </a>
+                        <form action="/category/{{$category->id}}" method="post" id="formdelete" style="display:inline">
+                          <a href="#" type="submit" name="submit" value="">
+                              <span class="fa fa-remove"></span>
+                          </a>
+                          {{ csrf_field() }}
+                          <input type="hidden" name="_method" value="DELETE" onclick=""/>
+                        </form>
                       </td>
                     </tr>
                   @endforeach
@@ -47,4 +52,13 @@
       </div>
     </div>
 </div>
+@endsection
+
+@section('notification')
+
+ {!! $notif !!}
+
+  $("a[name='submit']").click(function(){
+      $(this).closest('form').submit();
+  });
 @endsection
