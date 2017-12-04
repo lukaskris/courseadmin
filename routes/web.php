@@ -29,6 +29,7 @@ Route::delete('/category/{id}','CategoryController@delete');
 // Lesson
 Route::get('/lesson','LessonController@index');
 Route::get('/lesson/add','LessonController@add');
+Route::post('/lesson','LessonController@store');
 Route::get('/lesson/{id}','LessonController@edit');
-Route::get('/lesson/delete/{id}','LessonController@delete');
-Route::get('/lesson/search/{name}','LessonController@search');
+Route::put('/lesson/{id}','LessonController@update');
+Route::delete('/lesson/{id}','LessonController@delete');

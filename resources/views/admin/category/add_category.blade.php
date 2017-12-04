@@ -14,7 +14,7 @@
           <form action="/category" method="post">
           <div class="content">
             <div class="row">
-              <div class="col-md-8">
+              <div class="col-md-12">
                 @if($errors->has('name'))
                   <div class="form-group has-error">
                 @else
@@ -25,6 +25,7 @@
                 </div>
               </div>
             </div>
+            <a href="/category" class="btn btn-default btn-fill pull-left">Back</a>
             <button type="submit" class="btn btn-info btn-fill pull-right">Create</button>
             {{ csrf_field() }}
             <div class="clearfix"></div>

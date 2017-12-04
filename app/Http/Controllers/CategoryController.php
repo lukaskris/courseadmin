@@ -23,13 +23,13 @@ class CategoryController extends Controller
               });";
         session()->forget('data');
       }
-      return view('admin/category', ['data' => $data, 'notif' => $notif]);
+      return view('admin/category/category', ['data' => $data, 'notif' => $notif]);
     }
 
     public function add()
     {
       $data['title']="Add Category";
-      return view('admin/add_category', $data);
+      return view('admin/category/add_category', $data);
     }
 
     public function store(Request $request)
@@ -37,7 +37,7 @@ class CategoryController extends Controller
       $this->validate($request, [
         'name' => 'required|min:2'
       ]);
-      
+
       $data = new Category;
       $data->name = $request->name;
       $data->save();
@@ -49,7 +49,7 @@ class CategoryController extends Controller
       $data = Category::find($id);
       $title = "Edit Category";
       if(!$data) abort(404);
-      return view('admin/update_category',['data' => $data, 'title'=>$title]);
+      return view('admin/category/update_category',['data' => $data, 'title'=>$title]);
     }
 
     public function update(Request $request, $id)

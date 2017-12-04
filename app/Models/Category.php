@@ -18,4 +18,7 @@ class Category extends Model
     // Blacklist
     // protected $guarded = ['id', 'created_at', 'updated_at'];
 
+    public function lessons(){
+      return $this->hasMany('App\Models\Lesson');
+    }
 }
