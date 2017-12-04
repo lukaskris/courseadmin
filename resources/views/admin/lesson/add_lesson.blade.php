@@ -11,7 +11,7 @@
             <h4 class="title">Lesson</h4>
             <p class="category">Insert new Lesson</p>
           </div>
-          <form action="/lesson" method="post">
+          <form action="/lesson" method="post" enctype="multipart/form-data">
           <div class="content">
             <div class="row">
               <div class="col-md-12">
@@ -130,13 +130,14 @@
       <div class="row">
         <div class="col-md-12">
           <label class="control-label" for="sublesson[title][]">Title*</label>
-          <input type="text" class="form-control" placeholder="Title" name="sublesson[title][]" value=""/ />
+          <input type="text" class="form-control" placeholder="Title" name="title[]" value=""/ />
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
-            <label class="control-label" for="sublesson[src][]">File*</label>
-            <input type="file" class="form-control" placeholder="File Source" name="sublesson[src][]" value=""/ />
+            <label class="control-label" for="src[]">File*</label>
+            <input type="file" class="form-control" placeholder="File Source" name="src[]"/ />
+
         </div>
       </div>
       <div class="row" style="padding:15px"/>
