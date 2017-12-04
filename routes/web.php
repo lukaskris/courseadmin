@@ -20,13 +20,16 @@ Route::get('/home/{id}', 'HomeController@show');
 // Category
 Route::get('/category','CategoryController@index');
 Route::get('/category/add','CategoryController@add');
+Route::post('/category','CategoryController@store');
 Route::get('/category/{id}','CategoryController@edit');
-Route::get('/category/delete/{id}','CategoryController@delete');
-Route::get('/category/search/{name}','CategoryController@search');
+Route::put('/category/{id}','CategoryController@update');
+Route::delete('/category/{id}','CategoryController@delete');
+
 
 // Lesson
 Route::get('/lesson','LessonController@index');
 Route::get('/lesson/add','LessonController@add');
+Route::post('/lesson','LessonController@store');
 Route::get('/lesson/{id}','LessonController@edit');
-Route::get('/lesson/delete/{id}','LessonController@delete');
-Route::get('/lesson/search/{name}','LessonController@search');
+Route::put('/lesson/{id}','LessonController@update');
+Route::delete('/lesson/{id}','LessonController@delete');

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-  	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
+  	<link rel="icon" type="image/png" href="{{asset('img/logo.png')}}">
   	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -21,6 +21,8 @@
     <!-- DataTables core CSS -->
     <link href="{{ asset('css/dataTables.bootstrap.min.css')}}" rel="stylesheet"/>
 
+    <!-- Select2 CSS -->
+    <link href="{{ asset('css/select2.min.css')}}" rel="stylesheet"/>
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -129,21 +131,18 @@
   <script src="{{asset('js/light-bootstrap-dashboard.js?v=1.4.0')}}"></script>
 
   <!-- DataTables javascript -->
-  <script src="{{asset('js/dataTables.bootstrap.min.js')}}"></script>
   <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
+  <script src="{{asset('js/dataTables.bootstrap.min.js')}}"></script>
+
+
+  <script src="{{asset('js/select2.min.js')}}"></script>
+
 
 
 
   <script type="text/javascript">
       $(document).ready(function(){
-
-          // $.notify({
-          //     icon: 'pe-7s-gift',
-          //     message: "Welcome Administrator."
-          //   },{
-          //       type: 'info',
-          //       timer: 400
-          //   });
+            @yield('notification')
             $('#table').DataTable( {
                 "pagingType": "simple"
             } );
