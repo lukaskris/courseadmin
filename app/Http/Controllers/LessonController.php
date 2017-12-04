@@ -37,7 +37,20 @@ class LessonController extends Controller
 
       public function store(Request $request)
       {
-        // dd($request->sublesson);
+        $files = [];
+        if($request->file('src')){
+          $files[] = $request->file('src');
+
+          foreach ($files as $file) {
+            $contents = $file[0]->openFile()->fread($file[0]->getSize());
+            $encrypt = encrypt($contents);
+            dd(decrypt($encrypt));
+          }
+        }
+        else dd('bukan files');
+
+        dd($files);
+
         $this->validate($request, [
           'title' => 'required|min:2',
           'category' => 'required',
